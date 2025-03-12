@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phero Tube</title>
+    <title>PH Tube</title>
+
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    
+    <header>
+        <nav class="w-11/12 mx-auto flex justify-between border-b-2 border-[#17171720] py-3 items-center ">
+            <div class="logo">
+                <img class="w-[120px]" src="assets/Logo.png" alt="">
+            </div>
+            <div class="sort ">
+                <button class="btn h-[42px] bg-[rgba(37, 37, 37, 0.2)]">Sort by View</button>
+            </div>
+            <div class="blogs">
+                <button class="btn h-[42px] bg-[#FF1F3D] text-white">Blogs</button>
+            </div>
+        </nav>
+    </header>
+    <nav id="catagory-container" class="flex mx-auto gap-4 justify-center py-4">
+        <div>
+             <button onclick="loadVideos()" class="btn btn-sm bg-[#FF1F3D] text-white">All</button>
+        </div>
+        <!-- Buttons will come from JS append -->
+
+    </nav>
+
+    <!-- Video Containing Section where the divs come from js -->
+     <section id="video-container" class="w-11/12 mx-auto grid grid-cols-4 gap-4 ">
+        
+
+        <div class="col-span-full text-center flex flex-col justify-center items-center py-20 ">
+            <img class="w-[160px]" src="assets/Icon.png" alt="">
+            <h2 class="text-3xl font-bold pt-6">Oops!! Sorry, There is no content here</h2>
+         </div>
+     </section>
+     
+
+    <script src="script/index.js"></script>
 </body>
 </html>
