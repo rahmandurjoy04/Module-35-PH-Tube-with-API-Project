@@ -1,6 +1,6 @@
 function removeActiveClass(){
     const activeButtons=document.getElementsByClassName('active');
-    console.log(activeButtons)
+    // console.log(activeButtons)
     for (let btn of activeButtons){
         btn.classList.remove('active')
     }
@@ -106,7 +106,7 @@ const loadVideoDetails=(videoID)=>{
 }
 
 const displayVideoDetails = (video)=>{
-console.log(video)
+// console.log(video)
 document.getElementById('video_details').showModal()
 const detailsContainer = document.getElementById('details-container');
 detailsContainer.innerHTML=`
@@ -118,6 +118,8 @@ detailsContainer.innerHTML=`
   </figure>
   <div class="card-body">
     <h2 class="card-title">${video.title}</h2>
+
+    <p>Author : ${video.authors[0].profile_name}</p>
     <p>${video.description}</p>
     <div class="card-actions justify-end">
     </div>
@@ -161,7 +163,7 @@ const displayVideos = (videos) =>{
                   </div>
               </div>
               <div class="intro">
-                <h2 class="text-sm font-bold">Midnight Serenade</h2>
+                <h2 class="text-sm font-bold">${video.title}</h2>
                 <p class="text-xs text-gray-500 flex gap-1">${video.authors[0].profile_name}
                  ${video.authors[0].verified == true ? `<img class="w-4 h-4" src="https://img.icons8.com/?size=96&id=SRJUuaAShjVD&format=png" alt="">` :''}
                 </p>
