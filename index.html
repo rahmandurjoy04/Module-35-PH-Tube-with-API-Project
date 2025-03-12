@@ -8,6 +8,13 @@
     <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        .active{
+            background-color: #FF1F3D;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,7 +23,11 @@
                 <img class="w-[120px]" src="assets/Logo.png" alt="">
             </div>
             <div class="sort ">
-                <button class="btn h-[42px] bg-[rgba(37, 37, 37, 0.2)]">Sort by View</button>
+                <!-- <button class="btn h-[42px] bg-[rgba(37, 37, 37, 0.2)]">Sort by View</button> -->
+                <label class="input h-[38px]">
+                    <svg class="h-[20px] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                    <input id="search-input" type="search" required placeholder="Search"/>
+                  </label>
             </div>
             <div class="blogs">
                 <button class="btn h-[42px] bg-[#FF1F3D] text-white">Blogs</button>
@@ -25,11 +36,18 @@
     </header>
     <nav id="catagory-container" class="flex mx-auto gap-4 justify-center py-4">
         <div>
-             <button onclick="loadVideos()" class="btn btn-sm bg-[#FF1F3D] text-white">All</button>
+             <button onclick="loadVideos()" id="button-all" class="btn btn-sm">All</button>
         </div>
         <!-- Buttons will come from JS append -->
 
     </nav>
+
+
+    <!-- Loader Section -->
+     <section id="loader" class="text-center py-10 hidden">
+        <span class="loading loading-dots loading-xl"></span>
+
+     </section>
 
     <!-- Video Containing Section where the divs come from js -->
      <section id="video-container" class="w-11/12 mx-auto grid grid-cols-4 gap-4 ">
@@ -40,8 +58,24 @@
             <h2 class="text-3xl font-bold pt-6">Oops!! Sorry, There is no content here</h2>
          </div>
      </section>
+
+
+     <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="video_details" class="modal">
+  <div class="modal-box">
+    <div id="details-container"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn bg-sky-500">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
      
 
     <script src="script/index.js"></script>
 </body>
 </html>
+
